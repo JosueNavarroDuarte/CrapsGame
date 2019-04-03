@@ -80,41 +80,41 @@
            self.results = ""
            self.playerLost = False
            self.firstRollValue = 0
-86           self.buttonText = "Roll"
-87           self.wins = 0
-88           self.losses = 0
-89           self.currentBet = 0
-90           self.currentBank = self.startingBank
-91
-92       def saveGame(self):
-93           if self.createLogFile:
-94               self.logger.debug("Saving game")
-95           saveItems = (self.die1, self.die2, self.firstRoll, self.results, self.playerLost, self.firstRollValue, self.buttonText,self.wins, self.losses, self.currentBet, self.currentBank)
-96           if self.appSettings.contains('pickleFilename'):
-97               with open(path.join(path.dirname(path.realpath(__file__)),  self.appSettings.value('pickleFilename', type=str)), 'wb') as pickleFile:
-98                   dump(saveItems, pickleFile)
-99           elif self.createLogFile:
-100                  self.logger.critical("No pickle Filename")
-101
-102      def restoreGame(self):
-103          if self.appSettings.contains('pickleFilename'):
-104              self.appSettings.value('pickleFilename', type=str)
-105              with open(path.join(path.dirname(path.realpath(__file__)),  self.appSettings.value('pickleFilename', type=str)), 'rb') as pickleFile:
-106                  return load(pickleFile)
-107          else:
-108              self.logger.critical("No pickle Filename")
-109
-110      def restoreSettings(self):
-111          if self.createLogFile:
-112              self.logger.debug("Starting restoreSettings")
-113          # Restore settings values, write defaults to any that don't already exist.
-114          if self.appSettings.contains('startingBank'):
-115              self.startingBank = self.appSettings.value('startingBank', type=int)
-116          else:
-117              self.startingBank = startingBankDefault
-118              self.appSettings.setValue('startingBank', self.startingBank )
-119
-120          if self.appSettings.contains('maximumBet'):
+           self.buttonText = "Roll"
+           self.wins = 0
+           self.losses = 0
+           self.currentBet = 0
+           self.currentBank = self.startingBank
+
+       def saveGame(self):
+           if self.createLogFile:
+               self.logger.debug("Saving game")
+           saveItems = (self.die1, self.die2, self.firstRoll, self.results, self.playerLost, self.firstRollValue, self.buttonText,self.wins, self.losses, self.currentBet, self.currentBank)
+           if self.appSettings.contains('pickleFilename'):
+               with open(path.join(path.dirname(path.realpath(__file__)),  self.appSettings.value('pickleFilename', type=str)), 'wb') as pickleFile:
+                   dump(saveItems, pickleFile)
+           elif self.createLogFile:
+                  self.logger.critical("No pickle Filename")
+
+      def restoreGame(self):
+          if self.appSettings.contains('pickleFilename'):
+              self.appSettings.value('pickleFilename', type=str)
+              with open(path.join(path.dirname(path.realpath(__file__)),  self.appSettings.value('pickleFilename', type=str)), 'rb') as pickleFile:
+                  return load(pickleFile)
+          else:
+              self.logger.critical("No pickle Filename")
+
+      def restoreSettings(self):
+          if self.createLogFile:
+              self.logger.debug("Starting restoreSettings")
+          # Restore settings values, write defaults to any that don't already exist.
+          if self.appSettings.contains('startingBank'):
+              self.startingBank = self.appSettings.value('startingBank', type=int)
+          else:
+              self.startingBank = startingBankDefault
+              self.appSettings.setValue('startingBank', self.startingBank )
+
+          if self.appSettings.contains('maximumBet'):
 121              self.maximumBet = self.appSettings.value('maximumBet', type=int)
 122          else:
 123              self.maximumBet = maximumBetDefault
@@ -136,7 +136,7 @@
 139              self.logFilename = self.appSettings.value('logFile', type=str)
 140          else:
 141              self.logFilename = logFilenameDefault
-142              self.appSettings.setValue('logFile', self.logFilename )
+              self.appSettings.setValue('logFile', self.logFilename )
 143
 144          if self.appSettings.contains('pickleFilename'):
 145              self.pickleFilename = self.appSettings.value('pickleFilename', type=str)
