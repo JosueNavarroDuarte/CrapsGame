@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>894</width>
+    <height>666</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -493,6 +493,17 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
+           <widget class="QPushButton" name="preferencesSelectButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>images/Gear-icon-291x300.png</normaloff>images/Gear-icon-291x300.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
            <spacer name="horizontalSpacer_5">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -525,6 +536,28 @@
             </property>
            </spacer>
           </item>
+          <item>
+           <widget class="QPushButton" name="bailButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../../../Downloads/x-png-18.png</normaloff>../../../Downloads/x-png-18.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="restartButton">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>images/restartIcon.png</normaloff>images/restartIcon.png</iconset>
+            </property>
+           </widget>
+          </item>
          </layout>
         </item>
         <item>
@@ -551,7 +584,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>894</width>
      <height>22</height>
     </rect>
    </property>
@@ -560,7 +593,6 @@
  </widget>
  <resources>
   <include location="crapsResources.qrc"/>
-  <include location="../../../Python Assignments/Craps Project/Craps/crapsResources.qrc"/>
  </resources>
  <connections/>
 </ui>
